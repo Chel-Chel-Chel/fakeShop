@@ -1,6 +1,14 @@
 import { Outlet, Link } from "react-router-dom";
 
 import { useState } from "react";
+
+import {
+  AiOutlineHome,
+  AiOutlineShoppingCart,
+  AiOutlineQuestionCircle,
+  AiOutlineLogin,
+} from "react-icons/ai";
+
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -23,9 +31,12 @@ const Navbar = () => {
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}
         >
-          <span className="part1">Fake</span>
-          <span className="part2">Shop</span>
-          <span className="part3">Logo</span>
+          <div className="desktop">
+            <span className="part1">Fake</span>
+            <span className="part2">Shop</span>
+            <span className="part3">Logo</span>
+          </div>
+          <AiOutlineHome className="mobile" />
         </Link>
         <Link
           to="shop"
@@ -33,7 +44,8 @@ const Navbar = () => {
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}
         >
-          SHOP
+          <div className="desktop">SHOP</div>
+          <AiOutlineShoppingCart className="mobile" />
         </Link>
         <Link
           to="contact"
@@ -41,7 +53,8 @@ const Navbar = () => {
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}
         >
-          CONTACT
+          <div className="desktop">CONTACT</div>
+          <AiOutlineQuestionCircle className="mobile" />
         </Link>
         <Link
           to="sign"
@@ -49,7 +62,8 @@ const Navbar = () => {
           onMouseEnter={handleHover}
           onMouseLeave={handleLeave}
         >
-          SIGN
+          <div className="desktop">SIGN</div>
+          <AiOutlineLogin className="mobile" />
         </Link>
       </nav>
       <Outlet />
